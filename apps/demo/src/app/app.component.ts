@@ -5,7 +5,7 @@ import map from 'lodash/map';
 import moment from 'moment';
 
 @Component({
-  selector: 'nx-angular-bootstrap-root',
+  selector: 'jds-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
@@ -14,8 +14,8 @@ export class AppComponent {
   version = 'Version: ' + VERSION;
 
   constructor() {
-    console.warn(this.version);
-    console.warn(map([{ id: 'foo' }, { id: 'bar' }], (obj) => obj.id));
-    console.warn(moment().format('YYYY-MM-DD'));
+    console.error(this.version);
+    console.error(map([{ id: 'foo' }, { id: 'bar' }], (obj) => obj.id));
+    console.error(moment().format('YYYY-MM-DD'));
   }
 }

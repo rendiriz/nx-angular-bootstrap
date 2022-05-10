@@ -1,4 +1,4 @@
 export const environment = {
-  environment: 'undefined',
+  environment: 'localhost',
   production: false,
 };
