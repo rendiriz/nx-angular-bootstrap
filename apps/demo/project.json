@@ -4,9 +4,15 @@
   "prefix": "nx-angular-bootstrap",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@angular-builders/custom-webpack:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "customWebpackConfig": {
+          "path": "apps/demo/webpack.config.js",
+          "mergeRules": {
+            "externals": "replace"
+          }
+        },
         "outputPath": "dist/apps/demo",
         "index": "apps/demo/src/index.html",
         "main": "apps/demo/src/main.ts",
@@ -15,7 +21,8 @@
         "inlineStyleLanguage": "scss",
         "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
         "styles": ["apps/demo/src/styles.scss"],
-        "scripts": []
+        "scripts": [],
+        "allowedCommonJsDependencies": ["lodash"]
       },
       "configurations": {
         "production": {
@@ -72,7 +79,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@angular-builders/custom-webpack:dev-server",
       "configurations": {
         "production": {
           "browserTarget": "demo:build:production"
@@ -84,10 +91,13 @@
           "browserTarget": "demo:build:localhost"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/demo/proxy.config.json"
+      }
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "@angular-builders/custom-webpack:extract-i18n",
       "options": {
         "browserTarget": "demo:build"
       }

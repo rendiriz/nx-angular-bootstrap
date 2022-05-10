@@ -5,6 +5,12 @@
   "scripts": {
     "*** Config ***": "",
     "config:demo": "env-cmd -f ./apps/demo/.env node scripts/demo/env.js",
+    "*** Development ***": "",
+    "dev:demo": "npm run config:demo && nx serve demo --configuration=localhost --port=4200",
+    "*** Build ***": "",
+    "build:stat:demo": "nx build demo --stats-json",
+    "*** Analyze ***": "",
+    "analyze:demo": "webpack-bundle-analyzer dist/apps/demo/stats.json",
     "*** Other ***": "",
     "start": "nx serve",
     "build": "nx build",
@@ -13,6 +19,7 @@
   },
   "private": true,
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^13.1.0",
     "@angular-devkit/build-angular": "~13.3.0",
     "@angular-eslint/eslint-plugin": "~13.1.0",
     "@angular-eslint/eslint-plugin-template": "~13.1.0",
@@ -28,6 +35,7 @@
     "@nrwl/linter": "14.1.4",
     "@nrwl/workspace": "14.1.4",
     "@types/jest": "27.4.1",
+    "@types/lodash": "^4.14.182",
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "~5.18.0",
     "@typescript-eslint/parser": "~5.18.0",
@@ -38,11 +46,14 @@
     "eslint-plugin-cypress": "^2.10.3",
     "jest": "27.5.1",
     "jest-preset-angular": "11.1.1",
+    "lodash-webpack-plugin": "^0.11.6",
+    "moment-locales-webpack-plugin": "^1.2.0",
     "nx": "14.1.4",
     "prettier": "^2.6.2",
     "ts-jest": "27.1.4",
     "ts-node": "9.1.1",
-    "typescript": "~4.6.2"
+    "typescript": "~4.6.2",
+    "webpack-bundle-analyzer": "^4.5.0"
   },
   "dependencies": {
     "@angular/animations": "~13.3.0",
@@ -53,6 +64,8 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.3",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
