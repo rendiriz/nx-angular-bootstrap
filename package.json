@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "*** Config ***": "",
+    "config:demo": "env-cmd -f ./apps/demo/.env node scripts/demo/env.js",
+    "*** Other ***": "",
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
@@ -29,6 +32,7 @@
     "@typescript-eslint/eslint-plugin": "~5.18.0",
     "@typescript-eslint/parser": "~5.18.0",
     "cypress": "^9.1.0",
+    "env-cmd": "^10.1.0",
     "eslint": "~8.12.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",
