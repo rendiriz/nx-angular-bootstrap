@@ -24,7 +24,12 @@
             "prefix": "nx-angular-bootstrap",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "no-console": [
+          "error",
+          { "allow": ["info", "warn", "error", "assert"] }
+        ],
+        "max-classes-per-file": ["error", 2]
       }
     },
     {

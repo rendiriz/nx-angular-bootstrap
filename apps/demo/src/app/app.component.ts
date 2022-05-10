@@ -14,8 +14,8 @@ export class AppComponent {
   version = 'Version: ' + VERSION;
 
   constructor() {
-    console.log(this.version);
-    console.log(map([{ id: 'foo' }, { id: 'bar' }], (obj) => obj.id));
-    console.log(moment().format('YYYY-MM-DD'));
+    console.warn(this.version);
+    console.warn(map([{ id: 'foo' }, { id: 'bar' }], (obj) => obj.id));
+    console.warn(moment().format('YYYY-MM-DD'));
   }
 }
