@@ -8,6 +8,8 @@
     "*** Development ***": "",
     "dev:demo": "npm run config:demo && nx serve demo --configuration=localhost --port=4200",
     "*** Build ***": "",
+    "build:dev": "npm run config:demo && nx build demo --configuration=development",
+    "build:prod": "npm run config:demo && nx build demo --configuration=production",
     "build:stat:demo": "nx build demo --stats-json",
     "*** Analyze ***": "",
     "analyze:demo": "npm run build:stat:demo && webpack-bundle-analyzer dist/apps/demo/stats.json",
