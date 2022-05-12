@@ -1,2 +1,653 @@
-<jds-welcome></jds-welcome>
+<div class="mx-3 my-3">
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+
+  <hr />
+
+  <p class="h1 font-roboto fw-normal">Heading 1</p>
+  <p class="h2 font-roboto fw-normal">Heading 2</p>
+  <p class="h3 font-roboto fw-normal">Heading 3</p>
+  <p class="h4 font-roboto fw-normal">Heading 4</p>
+  <p class="h5 font-roboto fw-normal">Heading 5</p>
+  <p class="h6 font-roboto fw-normal">Heading 6</p>
+
+  <hr />
+
+  <p>Lorem ipsum</p>
+  <p class="text-primary">.text-primary</p>
+
+  <hr />
+
+  <button class="btn btn-red-700 me-2"
+          (click)="loadStyle('red')">Theme Red</button>
+  <button class="btn btn-green-700 me-2"
+          (click)="loadStyle('green')">Theme Green</button>
+  <button class="btn btn-green-800 me-2"
+          (click)="loadStyle('dark-green')">Theme Dark Green</button>
+
+  <hr />
+
+  <div class="row">
+    <div class="col">
+      <h4>Accordion</h4>
+      <ngb-accordion #acc="ngbAccordion"
+                     activeIds="ngb-panel-0">
+        <ngb-panel title="Simple">
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+            wolf
+            moon officia
+            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+            wolf
+            moon tempor,
+            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica,
+            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+            lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+            of
+            them accusamus
+            labore sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <span>&#9733; <b>Fancy</b> title &#9733;</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+            wolf
+            moon officia
+            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+            wolf
+            moon tempor,
+            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica,
+            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+            lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+            of
+            them accusamus
+            labore sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Disabled"
+                   [disabled]="true">
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+            wolf
+            moon officia
+            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+            wolf
+            moon tempor,
+            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica,
+            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+            lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+            of
+            them accusamus
+            labore sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+
+      <hr />
+      <h4>Alerts</h4>
+      <p>
+        <ngb-alert type="primary">This is a primary alert</ngb-alert>
+      </p>
+
+      <hr />
+      <h4>Badge</h4>
+      <span class="badge bg-primary">Primary</span>
+
+      <hr />
+      <h4>Breadcrumb</h4>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Library</a></li>
+          <li class="breadcrumb-item active"
+              aria-current="page">Data</li>
+        </ol>
+      </nav>
+
+      <hr />
+      <h4>Buttons</h4>
+      <button type="button"
+              class="btn btn-primary">Primary</button>
+
+      <button type="button"
+              class="btn btn-outline-primary">Primary</button>
+
+      <hr />
+      <h4>Button group</h4>
+      <div class="btn-group"
+           role="group"
+           aria-label="Basic example">
+        <button type="button"
+                class="btn btn-primary">Left</button>
+        <button type="button"
+                class="btn btn-primary">Middle</button>
+        <button type="button"
+                class="btn btn-primary">Right</button>
+      </div>
+
+      <hr />
+      <h4>Cards</h4>
+      <div class="card"
+           style="width: 18rem;">
+        <img src="https://placeimg.com/640/480/any"
+             class="card-img-top"
+             alt="Cards">
+        <div class="card-body">
+          <h6 class="card-title font-roboto fw-semibold">Card title</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+            card's content.</p>
+          <a href="#"
+             class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <hr />
+      <h4>Close button</h4>
+      <button type="button"
+              class="btn-close"
+              aria-label="Close"></button>
+
+      <hr />
+      <h4>Collapse</h4>
+      <p>
+        <button type="button"
+                class="btn btn-primary"
+                (click)="collapse.toggle()"
+                [attr.aria-expanded]="!isCollapsed"
+                aria-controls="collapseExample">
+          Toggle
+        </button>
+      </p>
+      <div #collapse="ngbCollapse"
+           [(ngbCollapse)]="isCollapsed">
+        <div class="card">
+          <div class="card-body">
+            You can collapse this card by clicking Toggle
+          </div>
+        </div>
+      </div>
+
+      <hr />
+      <h4>Dropdown</h4>
+      <div ngbDropdown
+           class="d-inline-block">
+        <button type="button"
+                class="btn btn-primary"
+                id="dropdownBasic1"
+                ngbDropdownToggle>Toggle dropdown</button>
+        <div ngbDropdownMenu
+             aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem>Action - 1</button>
+          <button ngbDropdownItem>Another Action</button>
+          <button ngbDropdownItem>Something else is here</button>
+        </div>
+      </div>
+
+      <hr />
+      <h4>Modal</h4>
+      <ng-template #content
+                   let-modal>
+        <div class="modal-header">
+          <h6 class="modal-title font-roboto fw-semibold text-primary"
+              id="modal-basic-title">Profile update</h6>
+          <button type="button"
+                  class="btn-close"
+                  aria-label="Close"
+                  (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="dateOfBirth">Date of birth</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button"
+                  class="btn btn-primary"
+                  (click)="modal.close('Save click')">Save</button>
+        </div>
+      </ng-template>
+
+      <button class="btn btn-primary"
+              (click)="open(content)">Launch demo modal</button>
+
+      <hr />
+      <h4>Navs and tabs</h4>
+      <ul ngbNav
+          #nav="ngbNav"
+          [(activeId)]="active"
+          class="nav-tabs">
+        <li [ngbNavItem]="1">
+          <a ngbNavLink>One</a>
+          <ng-template ngbNavContent>
+            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown
+              aliqua,
+              retro synth
+              master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
+              butcher
+              retro
+              keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid.
+              Aliquip
+              placeat
+              salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+            </p>
+          </ng-template>
+        </li>
+        <li [ngbNavItem]="2">
+          <a ngbNavLink>Two</a>
+          <ng-template ngbNavContent>
+            <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four
+              loko
+              farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk
+              aliquip
+              jean shorts
+              ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus
+              mollit.
+              Keytar
+              helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio
+              cillum
+              wes anderson
+              8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party
+              scenester
+              stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+          </ng-template>
+        </li>
+      </ul>
+
+      <div [ngbNavOutlet]="nav"
+           class="mt-2"></div>
+
+      <ul ngbNav
+          #navPills="ngbNav"
+          class="nav-pills">
+        <li [ngbNavItem]="1">
+          <a ngbNavLink>One</a>
+          <ng-template ngbNavContent>
+            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown
+              aliqua,
+              retro synth
+              master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
+              butcher
+              retro
+              keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid.
+              Aliquip
+              placeat
+              salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+            </p>
+          </ng-template>
+        </li>
+        <li [ngbNavItem]="2">
+          <a ngbNavLink>Two</a>
+          <ng-template ngbNavContent>
+            <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four
+              loko
+              farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk
+              aliquip
+              jean shorts
+              ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus
+              mollit.
+              Keytar
+              helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio
+              cillum
+              wes anderson
+              8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party
+              scenester
+              stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+          </ng-template>
+        </li>
+      </ul>
+
+      <div [ngbNavOutlet]="navPills"
+           class="mt-2"></div>
+
+      <ul ngbNav
+          #navFlush="ngbNav"
+          class="nav-flush">
+        <li [ngbNavItem]="1">
+          <a ngbNavLink>One</a>
+          <ng-template ngbNavContent>
+            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown
+              aliqua,
+              retro synth
+              master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
+              butcher
+              retro
+              keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid.
+              Aliquip
+              placeat
+              salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+            </p>
+          </ng-template>
+        </li>
+        <li [ngbNavItem]="2">
+          <a ngbNavLink>Two</a>
+          <ng-template ngbNavContent>
+            <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four
+              loko
+              farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk
+              aliquip
+              jean shorts
+              ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus
+              mollit.
+              Keytar
+              helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio
+              cillum
+              wes anderson
+              8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party
+              scenester
+              stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+          </ng-template>
+        </li>
+      </ul>
+
+      <div [ngbNavOutlet]="navFlush"
+           class="mt-2"></div>
+
+      <hr />
+      <h4>Placeholders</h4>
+      <div class="card"
+           aria-hidden="true"
+           style="width: 18rem;">
+        <img src="https://placeimg.com/640/480/any"
+             class="card-img-top"
+             alt="Placeholders">
+        <div class="card-body">
+          <h5 class="card-title placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h5>
+          <p class="card-text placeholder-glow">
+            <span class="placeholder col-7"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-6"></span>
+            <span class="placeholder col-8"></span>
+          </p>
+          <a href="#"
+             tabindex="-1"
+             class="btn btn-primary disabled placeholder col-6"></a>
+        </div>
+      </div>
+
+      <hr />
+      <h4>Popovers</h4>
+      <div class="d-flex justify-content-center">
+        <button type="button"
+                class="btn btn-primary ms-6"
+                placement="top"
+                ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+                popoverTitle="Popover on top">
+          Popover on top
+        </button>
+      </div>
+
+      <hr />
+      <h4>Progress</h4>
+      <p>
+        <ngb-progressbar type="primary"
+                         [value]="75"></ngb-progressbar>
+      </p>
+      <p>
+        <ngb-progressbar type="warning"
+                         [value]="50"
+                         [striped]="true"
+                         [animated]="true"><i>50%</i></ngb-progressbar>
+      </p>
+
+      <hr />
+      <h4>Spinners</h4>
+      <div class="spinner-border text-primary"
+           role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+
+      <hr />
+      <h4>Tooltip</h4>
+      <button type="button"
+              class="btn btn-outline-primary me-2"
+              placement="top"
+              ngbTooltip="Tooltip on top">
+        Tooltip on top
+      </button>
+      <button type="button"
+              class="btn btn-outline-primary me-2"
+              placement="end"
+              ngbTooltip="Tooltip on right">
+        Tooltip on right
+      </button>
+      <button type="button"
+              class="btn btn-outline-primary me-2"
+              placement="bottom"
+              ngbTooltip="Tooltip on bottom">
+        Tooltip on bottom
+      </button>
+      <button type="button"
+              class="btn btn-outline-primary me-2"
+              placement="start"
+              ngbTooltip="Tooltip on left">
+        Tooltip on left
+      </button>
+    </div>
+    <div class="col">
+      <h4>Form controls</h4>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1"
+               class="form-label">Email address</label>
+        <input type="email"
+               class="form-control"
+               id="exampleFormControlInput1"
+               placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1"
+               class="form-label">Example textarea</label>
+        <textarea class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"></textarea>
+      </div>
+
+      <h5>Search</h5>
+      <div class="input-group input-search left mb-3">
+        <span class="input-group-text">
+          <svg width="14"
+               height="14"
+               viewBox="0 0 14 14"
+               fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M9.47653 10.8907C8.49572 11.5892 7.29583 12 6 12C2.68629 12 0 9.31371 0 6C0 2.68629 2.68629 0 6 0C9.31371 0 12 2.68629 12 6C12 7.29583 11.5892 8.49572 10.8907 9.47653L13.7071 12.2929C14.0976 12.6834 14.0976 13.3166 13.7071 13.7071C13.3166 14.0976 12.6834 14.0976 12.2929 13.7071L9.47653 10.8907ZM10 6C10 8.20914 8.20914 10 6 10C3.79086 10 2 8.20914 2 6C2 3.79086 3.79086 2 6 2C8.20914 2 10 3.79086 10 6Z"
+                  fill="#616161" />
+          </svg>
+        </span>
+        <input class="form-control"
+               type="text"
+               placeholder="Cari" />
+      </div>
+
+      <div class="input-group input-search right mb-3">
+        <input class="form-control"
+               type="text"
+               placeholder="Cari" />
+        <span class="input-group-text">
+          <svg width="14"
+               height="14"
+               viewBox="0 0 14 14"
+               fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M9.47653 10.8907C8.49572 11.5892 7.29583 12 6 12C2.68629 12 0 9.31371 0 6C0 2.68629 2.68629 0 6 0C9.31371 0 12 2.68629 12 6C12 7.29583 11.5892 8.49572 10.8907 9.47653L13.7071 12.2929C14.0976 12.6834 14.0976 13.3166 13.7071 13.7071C13.3166 14.0976 12.6834 14.0976 12.2929 13.7071L9.47653 10.8907ZM10 6C10 8.20914 8.20914 10 6 10C3.79086 10 2 8.20914 2 6C2 3.79086 3.79086 2 6 2C8.20914 2 10 3.79086 10 6Z"
+                  fill="#616161" />
+          </svg>
+        </span>
+      </div>
+
+      <div class="input-group input-search-button right">
+        <input class="form-control"
+               type="text"
+               placeholder="Cari" />
+        <button class="btn btn-primary"
+                type="button">
+          Search
+        </button>
+      </div>
+
+      <hr />
+      <h5>Sizing</h5>
+      <div class="mb-3">
+        <input class="form-control form-control-lg"
+               type="text"
+               placeholder=".form-control-lg"
+               aria-label=".form-control-lg example">
+      </div>
+      <div class="mb-3">
+        <input class="form-control"
+               type="text"
+               placeholder="Default input"
+               aria-label="default input example">
+      </div>
+      <div class="mb-3">
+        <input class="form-control form-control-sm"
+               type="text"
+               placeholder=".form-control-sm"
+               aria-label=".form-control-sm example">
+      </div>
+
+      <hr />
+      <h5>Disabled & Readonly</h5>
+      <div class="mb-3">
+        <input class="form-control"
+               type="text"
+               placeholder="Disabled input"
+               aria-label="Disabled input example"
+               disabled>
+      </div>
+      <div class="mb-3">
+        <input class="form-control"
+               type="text"
+               value="Disabled readonly input"
+               aria-label="Disabled input example"
+               disabled
+               readonly>
+      </div>
+      <div class="mb-3">
+        <input class="form-control"
+               type="text"
+               value="Readonly input here..."
+               aria-label="readonly input example"
+               readonly>
+      </div>
+
+      <hr />
+      <h5>File input</h5>
+      <div class="mb-3">
+        <label for="formFile"
+               class="form-label">Default file input example</label>
+        <input class="form-control"
+               type="file"
+               id="formFile">
+      </div>
+
+      <hr />
+      <h4>Checks and radios</h4>
+      <hr />
+      <h5>Checks</h5>
+      <div class="form-check">
+        <input class="form-check-input"
+               type="checkbox"
+               value=""
+               id="flexCheckDefault">
+        <label class="form-check-label"
+               for="flexCheckDefault">
+          Default checkbox
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input"
+               type="checkbox"
+               value=""
+               id="flexCheckChecked"
+               checked>
+        <label class="form-check-label"
+               for="flexCheckChecked">
+          Checked checkbox
+        </label>
+      </div>
+
+      <hr />
+      <h5>Radios</h5>
+      <div class="form-check">
+        <input class="form-check-input"
+               type="radio"
+               name="flexRadioDefault"
+               id="flexRadioDefault1">
+        <label class="form-check-label"
+               for="flexRadioDefault1">
+          Default radio
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input"
+               type="radio"
+               name="flexRadioDefault"
+               id="flexRadioDefault2"
+               checked>
+        <label class="form-check-label"
+               for="flexRadioDefault2">
+          Default checked radio
+        </label>
+      </div>
+
+      <hr />
+      <h5>Switches</h5>
+      <div class="form-check form-switch">
+        <input class="form-check-input"
+               type="checkbox"
+               role="switch"
+               id="flexSwitchCheckDefault">
+        <label class="form-check-label"
+               for="flexSwitchCheckDefault">Default switch checkbox input</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input"
+               type="checkbox"
+               role="switch"
+               id="flexSwitchCheckChecked"
+               checked>
+        <label class="form-check-label"
+               for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+      </div>
+
+      <hr />
+      <h5>Input group</h5>
+      <div class="input-group mb-3">
+        <span class="input-group-text"
+              id="basic-addon1">Prefix</span>
+        <input type="text"
+               class="form-control"
+               placeholder="Username"
+               aria-label="Username"
+               aria-describedby="basic-addon1">
+      </div>
+
+    </div>
+  </div>
+
+
+
+</div>
 <router-outlet></router-outlet>

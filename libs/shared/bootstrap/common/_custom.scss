@@ -1,0 +1,145 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+// Typography
+.font-lato {
+  font-family: Lato !important;
+}
+
+.font-roboto {
+  font-family: Roboto !important;
+}
+
+.font-lora {
+  font-family: Lora !important;
+}
+
+// Forms
+.input-group {
+  &.input-search {
+    .input-group-text {
+      position: absolute;
+      border: unset;
+      height: 38px;
+      z-index: 4;
+      background-color: transparent;
+      color: $gray-400;
+    }
+
+    &.left {
+      .input-group-text {
+        left: 1px;
+        padding-left: 8px;
+        padding-right: 4px;
+      }
+
+      input {
+        padding-left: 32px;
+        border-top-left-radius: 8px !important;
+        border-bottom-left-radius: 8px !important;
+      }
+    }
+
+    &.right {
+      .input-group-text {
+        right: 1px;
+        padding-left: 4px;
+        padding-right: 8px;
+      }
+
+      input {
+        border-top-right-radius: 8px !important;
+        border-bottom-right-radius: 8px !important;
+      }
+    }
+  }
+
+  &.input-search-button {
+    .btn {
+      height: 36px;
+      padding: 8px 11px;
+      z-index: 3;
+    }
+
+    &.right {
+      input {
+        border-top-right-radius: 8px !important;
+        border-bottom-right-radius: 8px !important;
+      }
+
+      .btn {
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        border-top-left-radius: 8px !important;
+        border-bottom-left-radius: 8px !important;
+        border-top-right-radius: 7px;
+        /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+        border-bottom-right-radius: 7px;
+      }
+    }
+  }
+}
+
+// Navs
+.nav {
+  &.nav-flush {
+    .nav-link {
+      &.active {
+        border-bottom: 2px solid $primary;
+      }
+    }
+  }
+}
+
+// Dropdowns
+.dropup,
+.dropdown {
+  .dropdown-menu {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+
+    .dropdown-item {
+      border-radius: $border-radius;
+    }
+  }
+
+  &.dropup {
+    .dropdown-menu {
+      margin-bottom: 0.5rem !important;
+    }
+  }
+
+  .dropdown-toggle {
+    &::after {
+      display: none !important;
+    }
+  }
+}
+
+// Popovers
+.popover {
+  .popover-header {
+    font-family: Roboto;
+    font-weight: $font-weight-semibold;
+  }
+
+  .popover-body {
+    padding-top: 0;
+  }
+}
+
+// Modals
+.modal {
+  .modal-body {
+    padding: 1rem 1.5rem !important;
+  }
+
+  .modal-footer {
+    background-color: $gray-50;
+    padding: 0.75rem 1.5rem !important;
+  }
+}
+
+// Breadcrumbs
+.breadcrumb {
+  font-weight: 700 !important;
+}

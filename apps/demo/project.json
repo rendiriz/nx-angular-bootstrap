@@ -4,15 +4,9 @@
   "prefix": "nx-angular-bootstrap",
   "targets": {
     "build": {
-      "executor": "@angular-builders/custom-webpack:browser",
+      "executor": "ngx-build-plus:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "customWebpackConfig": {
-          "path": "apps/demo/webpack.config.js",
-          "mergeRules": {
-            "externals": "replace"
-          }
-        },
         "outputPath": "dist/apps/demo",
         "index": "apps/demo/src/index.html",
         "main": "apps/demo/src/main.ts",
@@ -20,7 +14,24 @@
         "tsConfig": "apps/demo/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
-        "styles": ["apps/demo/src/styles.scss"],
+        "styles": [
+          {
+            "input": "libs/shared/bootstrap/red/red.scss",
+            "inject": false,
+            "bundleName": "red"
+          },
+          {
+            "input": "libs/shared/bootstrap/green/green.scss",
+            "inject": false,
+            "bundleName": "green"
+          },
+          {
+            "input": "libs/shared/bootstrap/dark-green/dark-green.scss",
+            "inject": false,
+            "bundleName": "dark-green"
+          },
+          "apps/demo/src/styles.scss"
+        ],
         "scripts": [],
         "allowedCommonJsDependencies": ["lodash"]
       },
@@ -79,7 +90,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-builders/custom-webpack:dev-server",
+      "executor": "ngx-build-plus:dev-server",
       "configurations": {
         "production": {
           "browserTarget": "demo:build:production"
@@ -97,7 +108,7 @@
       }
     },
     "extract-i18n": {
-      "executor": "@angular-builders/custom-webpack:extract-i18n",
+      "executor": "ngx-build-plus:extract-i18n",
       "options": {
         "browserTarget": "demo:build"
       }
