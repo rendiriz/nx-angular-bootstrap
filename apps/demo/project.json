@@ -16,11 +16,6 @@
         "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
         "styles": [
           {
-            "input": "libs/shared/bootstrap/red/red.scss",
-            "inject": false,
-            "bundleName": "red"
-          },
-          {
             "input": "libs/shared/bootstrap/green/green.scss",
             "inject": false,
             "bundleName": "green"
@@ -29,6 +24,11 @@
             "input": "libs/shared/bootstrap/dark-green/dark-green.scss",
             "inject": false,
             "bundleName": "dark-green"
+          },
+          {
+            "input": "libs/shared/bootstrap/blue/blue.scss",
+            "inject": false,
+            "bundleName": "blue"
           },
           "apps/demo/src/styles.scss"
         ],
