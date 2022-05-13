@@ -586,13 +586,6 @@
       <hr />
       <h4>Select</h4>
       <div class="mb-3">
-        <input type="email"
-               class="form-control"
-               id="exampleFormControlInput1"
-               placeholder="name@example.com"
-               value="Indonesia">
-      </div>
-      <div class="mb-3">
         <label class="form-label">Single select</label>
         <ng-select [items]="simpleItems"
                    bindValue="value"
@@ -678,18 +671,125 @@
       </div>
       <div class="mb-3">
         <label class="form-label">Radio</label>
+        <ng-select [items]="radioItems"
+                   bindValue="value"
+                   bindLabel="label"
+                   [placeholder]="'Radio'"
+                   [closeOnSelect]="true"
+                   [(ngModel)]="selectedRadioItem">
+          <ng-template ng-option-tmp
+                       let-item="item"
+                       let-item$="item$"
+                       let-index="index">
+            <div class="form-check mb-0">
+              <input id="item-{{ index }}"
+                     class="form-check-input"
+                     type="radio"
+                     name="selectRadio"
+                     [value]="item.value"
+                     [checked]="item$.selected">
+              <label class="form-check-label"
+                     for="item-{{ index }}">
+                {{ item.label }}
+              </label>
+            </div>
+          </ng-template>
+        </ng-select>
       </div>
       <div class="mb-3">
         <label class="form-label">Multi select</label>
+        <ng-select [items]="multiItems"
+                   bindValue="value"
+                   bindLabel="label"
+                   [placeholder]="'Multi select'"
+                   [multiple]="true"
+                   [(ngModel)]="selectedMultiItem">
+          <ng-template ng-label-tmp
+                       let-item="item"
+                       let-clear="clear">
+            <span class="ng-value-label">{{item.label}}</span>
+            <span class="ng-value-icon right"
+                  (click)="clear(item)"
+                  aria-hidden="true">×</span>
+          </ng-template>
+        </ng-select>
       </div>
       <div class="mb-3">
         <label class="form-label">More</label>
+        <ng-select [items]="multiMoreItems"
+                   bindValue="value"
+                   bindLabel="label"
+                   [placeholder]="'More'"
+                   [multiple]="true"
+                   [(ngModel)]="selectedMultiMoreItem">
+          <ng-template ng-multi-label-tmp
+                       let-items="items"
+                       let-clear="clear">
+            <div class="ng-value"
+                 *ngFor="let item of items.slice(0,2)">
+              <span class="ng-value-label">{{ item.label }}</span>
+              <span class="ng-value-icon right"
+                    (click)="clear(item)"
+                    aria-hidden="true">×</span>
+            </div>
+            <div class="ng-value"
+                 *ngIf="items.length > 2">
+              <span class="ng-value-label">{{items.length - 2}} lainnya...</span>
+            </div>
+          </ng-template>
+        </ng-select>
       </div>
       <div class="mb-3">
         <label class="form-label">Group</label>
+        <ng-select [items]="multiGroupItems"
+                   bindValue="value"
+                   bindLabel="label"
+                   [placeholder]="'Group'"
+                   [multiple]="true"
+                   [(ngModel)]="selectedMultiGroupItem">
+          <ng-template ng-multi-label-tmp
+                       let-items="items">
+            <div class="ng-value">
+              <span class="ng-value-label">
+                {{ items.length }} terpilih
+              </span>
+            </div>
+          </ng-template>
+        </ng-select>
       </div>
       <div class="mb-3">
         <label class="form-label">Checkbox</label>
+        <ng-select [items]="multiCheckboxItems"
+                   bindValue="value"
+                   bindLabel="label"
+                   [placeholder]="'Checkbox'"
+                   [multiple]="true"
+                   [(ngModel)]="selectedMultiCheckboxItem">
+          <ng-template ng-option-tmp
+                       let-item="item"
+                       let-item$="item$"
+                       let-index="index">
+            <div class="form-check mb-0">
+              <input id="item-{{ index }}"
+                     class="form-check-input"
+                     type="checkbox"
+                     name="selectCheckbox"
+                     [ngModel]="item$.selected">
+              <label class="form-check-label"
+                     for="item-{{ index }}">
+                {{ item.label }}
+              </label>
+            </div>
+          </ng-template>
+          <ng-template ng-label-tmp
+                       let-item="item"
+                       let-clear="clear">
+            <span class="ng-value-label">{{item.label}}</span>
+            <span class="ng-value-icon right"
+                  (click)="clear(item)"
+                  aria-hidden="true">×</span>
+          </ng-template>
+        </ng-select>
       </div>
 
       <hr />

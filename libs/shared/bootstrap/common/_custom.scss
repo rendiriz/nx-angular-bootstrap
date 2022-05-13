@@ -52,7 +52,7 @@
           font-size: $input-font-size;
           font-weight: 900;
           content: '\f078';
-          color: $green-600;
+          color: $primary;
         }
       }
     }
@@ -61,6 +61,36 @@
   &.ng-select-single {
     .ng-select-container {
       height: 36.398px !important;
+    }
+  }
+
+  &.ng-select-multiple {
+    .ng-select-container {
+      min-height: 36.398px !important;
+
+      .ng-value-container {
+        .ng-placeholder {
+          top: 0.5rem;
+        }
+
+        .ng-value {
+          background-color: tint-color($primary, 90%);
+
+          .ng-value-icon {
+            &.left {
+              border-right: 1px solid tint-color($primary, 80%);
+            }
+
+            &.right {
+              border-left: 1px solid tint-color($primary, 80%);
+            }
+
+            &:hover {
+              background-color: tint-color($primary, 80%);
+            }
+          }
+        }
+      }
     }
   }
 
@@ -75,7 +105,7 @@
             font-size: $input-font-size;
             font-weight: 900;
             content: '\f077';
-            color: $green-600;
+            color: $primary;
           }
         }
       }
@@ -92,6 +122,148 @@
       .ng-select-container {
         border-top-right-radius: $border-radius;
         border-top-left-radius: $border-radius;
+      }
+    }
+  }
+
+  &.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
+    border-color: $primary;
+    box-shadow: $input-btn-focus-box-shadow;
+  }
+
+  &.ng-select-long {
+    .ng-dropdown-panel {
+      .ng-dropdown-panel-items {
+        .ng-option {
+          white-space: unset;
+        }
+      }
+    }
+  }
+
+  &.ng-select-header {
+    .ng-dropdown-panel {
+      .ng-dropdown-header {
+        .ng-dropdown-title {
+          font-weight: bold;
+          font-size: $input-font-size;
+          text-align: center;
+          padding: 0.5rem;
+        }
+      }
+
+      &.ng-select-top,
+      &.ng-select-bottom {
+        .ng-dropdown-panel-items {
+          .ng-option {
+            &:first-child {
+              border-top-right-radius: 0;
+              border-top-left-radius: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.ng-select-search {
+    .ng-dropdown-panel {
+      .ng-dropdown-header {
+        border-bottom: unset;
+
+        .ng-dropdown-search {
+          border-top: 1px solid #ccc;
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+
+  &.ng-select-paging {
+    &.ng-select-opened {
+      .ng-select-container {
+        background-color: $white;
+      }
+
+      &.ng-select-bottom {
+        .ng-select-container {
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+
+      &.ng-select-top {
+        .ng-select-container {
+          border-top-right-radius: 0;
+          border-top-left-radius: 0;
+        }
+      }
+    }
+
+    .ng-select-container {
+      height: auto !important;
+      width: 67px !important;
+      background-color: $white;
+      border: none;
+      border-radius: 0;
+    }
+  }
+
+  .ng-dropdown-panel {
+    .ng-dropdown-header {
+      padding: 0;
+    }
+
+    .ng-dropdown-panel-items {
+      .ng-option {
+        .ng-option-label,
+        .form-check-label,
+        &.ng-option-disabled {
+          font-weight: normal;
+          font-size: $input-font-size;
+        }
+
+        &.ng-option-selected {
+          background-color: $gray-300 !important;
+
+          .ng-option-label,
+          .form-check-label {
+            font-weight: 600 !important;
+          }
+        }
+
+        &.ng-option-marked {
+          background-color: $gray-200;
+        }
+      }
+    }
+
+    &.ng-select-top {
+      margin-bottom: 0.5rem;
+      border-bottom-color: #ccc;
+    }
+
+    &.ng-select-bottom {
+      margin-top: 0.5rem;
+      border-top-color: #ccc;
+    }
+
+    &.ng-select-top,
+    &.ng-select-bottom {
+      border-radius: 0.5rem;
+
+      .ng-dropdown-panel-items {
+        .ng-option {
+          &:first-child {
+            border-top-right-radius: 0.5rem;
+            border-top-left-radius: 0.5rem;
+          }
+
+          &:last-child {
+            border-bottom-right-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+          }
+        }
       }
     }
   }
