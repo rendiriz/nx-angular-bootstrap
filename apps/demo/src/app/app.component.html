@@ -584,6 +584,115 @@
       </div>
 
       <hr />
+      <h4>Select</h4>
+      <div class="mb-3">
+        <input type="email"
+               class="form-control"
+               id="exampleFormControlInput1"
+               placeholder="name@example.com"
+               value="Indonesia">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Single select</label>
+        <ng-select [items]="simpleItems"
+                   bindValue="value"
+                   bindLabel="label"
+                   [placeholder]="'Single select'"
+                   [(ngModel)]="selectedSimpleItem">
+        </ng-select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Dropdown position</label>
+        <ng-select [items]="dropdownItems"
+                   bindValue="value"
+                   bindLabel="label"
+                   [placeholder]="'Dropdown position'"
+                   [dropdownPosition]="'top'"
+                   [(ngModel)]="selectedDropdownItem">
+        </ng-select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Long option</label>
+        <ng-select class="ng-select-long"
+                   [items]="longItems"
+                   bindValue="value"
+                   bindLabel="label"
+                   [placeholder]="'Large option'"
+                   [(ngModel)]="selectedLongItem">
+        </ng-select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Header</label>
+        <ng-select class="ng-select-header"
+                   [items]="headerItems"
+                   bindValue="value"
+                   bindLabel="label"
+                   [placeholder]="'Header'"
+                   [(ngModel)]="selectedHeaderItem">
+          <ng-template ng-header-tmp>
+            <div class="ng-dropdown-title">
+              Header
+            </div>
+          </ng-template>
+          <ng-template ng-option-tmp
+                       let-item="item"
+                       let-item$="item$"
+                       let-index="index">
+            <span class="ng-option-label">{{ item.label }}</span>
+          </ng-template>
+        </ng-select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Search</label>
+        <ng-select #selectSelect
+                   class="ng-select-header ng-select-search"
+                   [items]="searchItems"
+                   bindValue="value"
+                   bindLabel="label"
+                   [placeholder]="'Search'"
+                   [searchable]="false"
+                   [(ngModel)]="selectedSearchItem">
+          <ng-template ng-header-tmp>
+            <div class="ng-dropdown-title">
+              Header
+            </div>
+            <div class="ng-dropdown-search">
+              <div class="input-group input-search left">
+                <span class="input-group-text">
+                  <i class="fas fa-search"></i>
+                </span>
+                <input class="form-control"
+                       type="text"
+                       [placeholder]="'Cari'"
+                       (input)="selectSelect.filter($any($event.target).value)" />
+              </div>
+            </div>
+          </ng-template>
+          <ng-template ng-option-tmp
+                       let-item="item"
+                       let-item$="item$"
+                       let-index="index">
+            <span class="ng-option-label">{{ item.label }}</span>
+          </ng-template>
+        </ng-select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Radio</label>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Multi select</label>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">More</label>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Group</label>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Checkbox</label>
+      </div>
+
+      <hr />
       <h4>Checks and radios</h4>
       <hr />
       <h5>Checks</h5>

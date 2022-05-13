@@ -1,4 +1,5 @@
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
+/* stylelint-disable no-descending-specificity */
 // Typography
 .font-lato {
   font-family: Lato !important;
@@ -13,6 +14,89 @@
 }
 
 // Forms
+.ng-select {
+  .ng-select-container {
+    border-radius: $border-radius;
+    background-color: $white;
+    border: 1px solid $gray-400;
+
+    .ng-value-container {
+      .ng-placeholder {
+        font-weight: normal;
+        font-size: $input-font-size;
+        color: $gray-600;
+      }
+
+      .ng-value {
+        .ng-value-label {
+          font-weight: normal;
+          font-size: $input-font-size;
+        }
+      }
+
+      .ng-input > input {
+        font-weight: normal;
+        font-size: $input-font-size;
+      }
+    }
+
+    .ng-arrow-wrapper {
+      padding-right: 0.5rem;
+
+      .ng-arrow {
+        border: none;
+        width: unset;
+
+        &::before {
+          font-family: 'Font Awesome 5 Free';
+          font-size: $input-font-size;
+          font-weight: 900;
+          content: '\f078';
+          color: $green-600;
+        }
+      }
+    }
+  }
+
+  &.ng-select-single {
+    .ng-select-container {
+      height: 36.398px !important;
+    }
+  }
+
+  &.ng-select-opened {
+    .ng-select-container {
+      background-color: $white;
+
+      .ng-arrow-wrapper {
+        .ng-arrow {
+          &::before {
+            font-family: 'Font Awesome 5 Free';
+            font-size: $input-font-size;
+            font-weight: 900;
+            content: '\f077';
+            color: $green-600;
+          }
+        }
+      }
+    }
+
+    &.ng-select-bottom {
+      .ng-select-container {
+        border-bottom-right-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+      }
+    }
+
+    &.ng-select-top {
+      .ng-select-container {
+        border-top-right-radius: $border-radius;
+        border-top-left-radius: $border-radius;
+      }
+    }
+  }
+}
+
 .input-group {
   &.input-search {
     .input-group-text {
