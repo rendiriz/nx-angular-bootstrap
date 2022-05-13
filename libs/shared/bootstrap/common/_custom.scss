@@ -54,7 +54,7 @@
 
   &.input-search-button {
     .btn {
-      height: 36px;
+      height: 35.398px;
       padding: 8px 11px;
       z-index: 3;
     }
@@ -74,6 +74,19 @@
         border-top-right-radius: 7px;
         /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
         border-bottom-right-radius: 7px;
+      }
+    }
+
+    &.input-group-lg {
+      .btn {
+        right: 3.5px;
+        top: 3.5px;
+      }
+    }
+
+    &.input-group-sm {
+      .btn {
+        height: 29.195px;
       }
     }
   }
