@@ -40,6 +40,13 @@ export class AppComponent {
   multiCheckboxItems: any[] = [];
   selectedMultiCheckboxItem = [1, 2, 3, 4];
 
+  perPageItems = [
+    { value: 10, label: '10' },
+    { value: 25, label: '25' },
+    { value: 100, label: '100' },
+  ];
+  selectedPerPageItem = 10;
+
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private modalService: NgbModal
