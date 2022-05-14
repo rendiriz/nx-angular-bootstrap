@@ -47,6 +47,16 @@ export class AppComponent {
   ];
   selectedPerPageItem = 10;
 
+  locale = {
+    applyLabel: 'Appliquer',
+    customRangeLabel: ' - ',
+    daysOfWeek: moment.weekdaysMin(),
+    monthNames: moment.monthsShort(),
+    firstDay: moment.localeData().firstDayOfWeek(),
+  };
+  datepickerValue: any;
+  daterangepickerValue: any;
+
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private modalService: NgbModal

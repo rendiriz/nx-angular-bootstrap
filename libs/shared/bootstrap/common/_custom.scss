@@ -541,3 +541,13 @@
     }
   }
 }
+
+// Datepicker
+.md-drppicker td.active,
+.md-drppicker td.active:hover {
+  background-color: $primary !important;
+}
+
+.md-drppicker th {
+  color: $gray-800 !important;
+}

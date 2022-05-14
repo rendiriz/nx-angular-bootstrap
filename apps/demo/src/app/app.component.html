@@ -1141,6 +1141,32 @@
         </div>
       </div>
 
+      <hr />
+      <h4>Date</h4>
+      <div>
+        <div class="mb-3">
+          <label class="form-label">Datepicker</label>
+          <input type="text"
+                 class="form-control"
+                 [(ngModel)]="datepickerValue"
+                 ngxDaterangepickerMd
+                 [singleDatePicker]="true"
+                 [autoApply]="true"
+                 [locale]="locale" />
+          {{ datepickerValue | json }}
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Daterangepicker</label>
+          <input type="text"
+                 class="form-control"
+                 [(ngModel)]="daterangepickerValue"
+                 ngxDaterangepickerMd
+                 [autoApply]="true"
+                 [locale]="locale" />
+          {{ daterangepickerValue | json }}
+        </div>
+      </div>
+
     </div>
   </div>
 
