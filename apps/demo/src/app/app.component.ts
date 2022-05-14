@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 declare const VERSION: string;
 import map from 'lodash/map';
@@ -47,9 +48,20 @@ export class AppComponent {
   ];
   selectedPerPageItem = 10;
 
+  locale = {
+    applyLabel: 'Appliquer',
+    customRangeLabel: ' - ',
+    daysOfWeek: moment.weekdaysMin(),
+    monthNames: moment.monthsShort(),
+    firstDay: moment.localeData().firstDayOfWeek(),
+  };
+  datepickerValue: any;
+  daterangepickerValue: any;
+
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private spinner: NgxSpinnerService
   ) {
     console.error(this.version);
     console.error(map([{ id: 'foo' }, { id: 'bar' }], (obj) => obj.id));
@@ -135,5 +147,12 @@ export class AppComponent {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  showSpinner() {
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
 }
