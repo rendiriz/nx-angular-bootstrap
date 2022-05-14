@@ -43,7 +43,7 @@
           ],
           "outputHashing": "all"
         },
-        "localhost": {
+        "development": {
           "budgets": [
             {
               "type": "initial",
@@ -58,13 +58,13 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/demo/src/environments/environment.ts",
-              "with": "apps/demo/src/environments/environment.dev.ts"
+              "replace": "apps/admin/src/environments/environment.ts",
+              "with": "apps/admin/src/environments/environment.dev.ts"
             }
           ],
           "outputHashing": "all"
         },
-        "development": {
+        "localhost": {
           "buildOptimizer": false,
           "optimization": false,
           "vendorChunk": true,
