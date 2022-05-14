@@ -89,7 +89,7 @@
           "browserTarget": "admin:build:development"
         },
         "localhost": {
-          "browserTarget": "demo:build:localhost"
+          "browserTarget": "admin:build:localhost"
         }
       },
       "defaultConfiguration": "development"
