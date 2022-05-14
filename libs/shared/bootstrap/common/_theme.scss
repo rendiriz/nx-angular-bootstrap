@@ -1,0 +1,107 @@
+/* stylelint-disable scss/no-global-function-names */
+// theme-colors-rgb
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, '$value');
+
+// Utilities maps
+// -----------------------------------------------------------------------------
+// utilities-colors
+$utilities-colors: $theme-colors-rgb;
+
+// utilities-text-colors
+$utilities-text: map-merge(
+  $utilities-colors,
+  (
+    'black': to-rgb($black),
+    'white': to-rgb($white),
+    'body': to-rgb($body-color),
+  )
+);
+$utilities-text-colors: map-loop($utilities-text, rgba-css-var, '$key', 'text');
+
+// utilities-bg-colors
+$utilities-bg: map-merge(
+  $utilities-colors,
+  (
+    'black': to-rgb($black),
+    'white': to-rgb($white),
+    'body': to-rgb($body-bg),
+  )
+);
+$utilities-bg-colors: map-loop($utilities-bg, rgba-css-var, '$key', 'bg');
+
+// Links
+// -----------------------------------------------------------------------------
+$link-color: $primary;
+$link-hover-color: shift-color($link-color, $link-shade-percentage);
+
+// Components
+// -----------------------------------------------------------------------------
+$component-active-color: $white;
+$component-active-bg: $primary;
+
+// Tables
+// -----------------------------------------------------------------------------
+$table-variants: (
+  'primary': shift-color($primary, $table-bg-scale),
+  'secondary': shift-color($secondary, $table-bg-scale),
+  'success': shift-color($success, $table-bg-scale),
+  'info': shift-color($info, $table-bg-scale),
+  'warning': shift-color($warning, $table-bg-scale),
+  'danger': shift-color($danger, $table-bg-scale),
+  'light': $light,
+  'dark': $dark,
+);
+
+// Forms
+// -----------------------------------------------------------------------------
+$input-focus-border-color: $component-active-bg;
+$form-check-input-focus-border: $input-focus-border-color;
+$form-check-input-checked-color: $component-active-color;
+$form-check-input-checked-bg-color: $component-active-bg;
+$form-check-input-checked-border-color: $form-check-input-checked-bg-color;
+$form-check-input-checked-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-checked-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/></svg>");
+$form-check-radio-checked-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$form-check-input-checked-color}'/></svg>");
+$form-check-input-indeterminate-color: $component-active-color;
+$form-check-input-indeterminate-bg-color: $component-active-bg;
+$form-check-input-indeterminate-border-color: $form-check-input-indeterminate-bg-color;
+$form-check-input-indeterminate-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-indeterminate-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/></svg>");
+$form-range-thumb-bg: $component-active-bg;
+$form-range-thumb-active-bg: tint-color($component-active-bg, 70%);
+
+// Navs
+// -----------------------------------------------------------------------------
+$nav-link-hover-color: $link-hover-color;
+$nav-tabs-border-color: $primary;
+$nav-tabs-link-active-color: $primary;
+$nav-tabs-link-active-border-color: $primary $primary $nav-tabs-link-active-bg;
+$nav-tabs-link-hover-border-color: transparent transparent
+  $nav-tabs-border-color;
+$nav-pills-link-active-color: $component-active-color;
+$nav-pills-link-active-bg: $component-active-bg;
+
+// Dropdowns
+// -----------------------------------------------------------------------------
+$dropdown-link-active-color: $component-active-color;
+$dropdown-link-active-bg: $component-active-bg;
+
+// Pagination
+// -----------------------------------------------------------------------------
+$pagination-color: $link-color;
+$pagination-focus-color: $link-hover-color;
+$pagination-hover-color: $link-hover-color;
+$pagination-active-color: $component-active-color;
+$pagination-active-bg: $component-active-bg;
+$pagination-active-border-color: $pagination-active-bg;
+
+// Accordion
+// -----------------------------------------------------------------------------
+$accordion-border-color: shade-color($primary, 20%);
+$accordion-button-active-color: $accordion-border-color;
+$accordion-icon-color: $accordion-border-color;
+$accordion-icon-active-color: $accordion-border-color;
+$accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+
+// Progress bars
+// -----------------------------------------------------------------------------
+$progress-bar-bg: $primary;

@@ -1,0 +1,543 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+/* stylelint-disable no-descending-specificity */
+// Typography
+.font-lato {
+  font-family: Lato !important;
+}
+
+.font-roboto {
+  font-family: Roboto !important;
+}
+
+.font-lora {
+  font-family: Lora !important;
+}
+
+// Forms
+.ng-select {
+  .ng-select-container {
+    border-radius: $border-radius;
+    background-color: $white;
+    border: 1px solid $gray-400;
+
+    .ng-value-container {
+      .ng-placeholder {
+        font-weight: normal;
+        font-size: $input-font-size;
+        color: $gray-600;
+      }
+
+      .ng-value {
+        .ng-value-label {
+          font-weight: normal;
+          font-size: $input-font-size;
+        }
+      }
+
+      .ng-input > input {
+        font-weight: normal;
+        font-size: $input-font-size;
+      }
+    }
+
+    .ng-arrow-wrapper {
+      padding-right: 0.5rem;
+
+      .ng-arrow {
+        border: none;
+        width: unset;
+
+        &::before {
+          font-family: 'Font Awesome 5 Free';
+          font-size: $input-font-size;
+          font-weight: 900;
+          content: '\f078';
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &.ng-select-single {
+    .ng-select-container {
+      height: 36.398px !important;
+    }
+  }
+
+  &.ng-select-multiple {
+    .ng-select-container {
+      min-height: 36.398px !important;
+
+      .ng-value-container {
+        .ng-placeholder {
+          top: 0.5rem;
+        }
+
+        .ng-value {
+          background-color: tint-color($primary, 90%);
+
+          .ng-value-icon {
+            &.left {
+              border-right: 1px solid tint-color($primary, 80%);
+            }
+
+            &.right {
+              border-left: 1px solid tint-color($primary, 80%);
+            }
+
+            &:hover {
+              background-color: tint-color($primary, 80%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.ng-select-opened {
+    .ng-select-container {
+      background-color: $white;
+
+      .ng-arrow-wrapper {
+        .ng-arrow {
+          &::before {
+            font-family: 'Font Awesome 5 Free';
+            font-size: $input-font-size;
+            font-weight: 900;
+            content: '\f077';
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    &.ng-select-bottom {
+      .ng-select-container {
+        border-bottom-right-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+      }
+    }
+
+    &.ng-select-top {
+      .ng-select-container {
+        border-top-right-radius: $border-radius;
+        border-top-left-radius: $border-radius;
+      }
+    }
+  }
+
+  &.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
+    border-color: $primary;
+    box-shadow: $input-btn-focus-box-shadow;
+  }
+
+  &.ng-select-long {
+    .ng-dropdown-panel {
+      .ng-dropdown-panel-items {
+        .ng-option {
+          white-space: unset;
+        }
+      }
+    }
+  }
+
+  &.ng-select-header {
+    .ng-dropdown-panel {
+      .ng-dropdown-header {
+        .ng-dropdown-title {
+          font-weight: bold;
+          font-size: $input-font-size;
+          text-align: center;
+          padding: 0.5rem;
+        }
+      }
+
+      &.ng-select-top,
+      &.ng-select-bottom {
+        .ng-dropdown-panel-items {
+          .ng-option {
+            &:first-child {
+              border-top-right-radius: 0;
+              border-top-left-radius: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.ng-select-search {
+    .ng-dropdown-panel {
+      .ng-dropdown-header {
+        border-bottom: unset;
+
+        .ng-dropdown-search {
+          border-top: 1px solid #ccc;
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+
+  &.ng-select-paging {
+    &.ng-select-opened {
+      .ng-select-container {
+        background-color: $white;
+      }
+
+      &.ng-select-bottom {
+        .ng-select-container {
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+
+      &.ng-select-top {
+        .ng-select-container {
+          border-top-right-radius: 0;
+          border-top-left-radius: 0;
+        }
+      }
+    }
+
+    .ng-select-container {
+      height: auto !important;
+      width: 67px !important;
+      background-color: $white;
+      border: none;
+      border-radius: 0;
+    }
+  }
+
+  .ng-dropdown-panel {
+    .ng-dropdown-header {
+      padding: 0;
+    }
+
+    .ng-dropdown-panel-items {
+      .ng-option {
+        .ng-option-label,
+        .form-check-label,
+        &.ng-option-disabled {
+          font-weight: normal;
+          font-size: $input-font-size;
+        }
+
+        &.ng-option-selected {
+          background-color: $gray-300 !important;
+
+          .ng-option-label,
+          .form-check-label {
+            font-weight: 600 !important;
+          }
+        }
+
+        &.ng-option-marked {
+          background-color: $gray-200;
+        }
+      }
+    }
+
+    &.ng-select-top {
+      margin-bottom: 0.5rem;
+      border-bottom-color: #ccc;
+    }
+
+    &.ng-select-bottom {
+      margin-top: 0.5rem;
+      border-top-color: #ccc;
+    }
+
+    &.ng-select-top,
+    &.ng-select-bottom {
+      border-radius: 0.5rem;
+
+      .ng-dropdown-panel-items {
+        .ng-option {
+          &:first-child {
+            border-top-right-radius: 0.5rem;
+            border-top-left-radius: 0.5rem;
+          }
+
+          &:last-child {
+            border-bottom-right-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.input-group {
+  &.input-search {
+    .input-group-text {
+      position: absolute;
+      border: unset;
+      height: 38px;
+      z-index: 4;
+      background-color: transparent;
+      color: $gray-400;
+    }
+
+    &.left {
+      .input-group-text {
+        left: 1px;
+        padding-left: 8px;
+        padding-right: 4px;
+      }
+
+      input {
+        padding-left: 32px;
+        border-top-left-radius: 8px !important;
+        border-bottom-left-radius: 8px !important;
+      }
+    }
+
+    &.right {
+      .input-group-text {
+        right: 1px;
+        padding-left: 4px;
+        padding-right: 8px;
+      }
+
+      input {
+        border-top-right-radius: 8px !important;
+        border-bottom-right-radius: 8px !important;
+      }
+    }
+  }
+
+  &.input-search-button {
+    .btn {
+      height: 35.398px;
+      padding: 8px 11px;
+      z-index: 3;
+    }
+
+    &.right {
+      input {
+        border-top-right-radius: 8px !important;
+        border-bottom-right-radius: 8px !important;
+      }
+
+      .btn {
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        border-top-left-radius: 8px !important;
+        border-bottom-left-radius: 8px !important;
+        border-top-right-radius: 7px;
+        /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+        border-bottom-right-radius: 7px;
+      }
+    }
+
+    &.input-group-lg {
+      .btn {
+        right: 3.5px;
+        top: 3.5px;
+      }
+    }
+
+    &.input-group-sm {
+      .btn {
+        height: 29.195px;
+      }
+    }
+  }
+}
+
+// Navs
+.nav {
+  &.nav-flush {
+    .nav-link {
+      &.active {
+        border-bottom: 2px solid $primary;
+      }
+    }
+  }
+}
+
+// Dropdowns
+.dropup,
+.dropdown {
+  .dropdown-menu {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+
+    .dropdown-item {
+      border-radius: $border-radius;
+    }
+  }
+
+  &.dropup {
+    .dropdown-menu {
+      margin-bottom: 0.5rem !important;
+    }
+  }
+
+  .dropdown-toggle {
+    &::after {
+      display: none !important;
+    }
+  }
+}
+
+// Popovers
+.popover {
+  .popover-header {
+    font-family: Roboto;
+    font-weight: $font-weight-semibold;
+  }
+
+  .popover-body {
+    padding-top: 0;
+  }
+}
+
+// Modals
+.modal {
+  .modal-body {
+    padding: 1rem 1.5rem !important;
+  }
+
+  .modal-footer {
+    background-color: $gray-50;
+    padding: 0.75rem 1.5rem !important;
+  }
+}
+
+// Breadcrumbs
+.breadcrumb {
+  font-weight: 700 !important;
+}
+
+// Table
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid $gray-300;
+
+  thead {
+    th {
+      vertical-align: middle;
+      overflow: hidden;
+      border-right: 1px solid $white;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
+
+.table-paging {
+  .table {
+    margin-bottom: 0;
+  }
+
+  .paging {
+    font-size: 14px;
+    background-color: $gray-50;
+    border: 1px solid $gray-300;
+    border-top: 0;
+
+    .paging-info {
+      .paging-per-page {
+        display: flex;
+        align-items: center;
+      }
+
+      .paging-records {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .paging-nav {
+      display: flex;
+      align-items: center;
+
+      .paging-page {
+        display: flex;
+        align-items: center;
+      }
+
+      .paging-button-end {
+        display: flex;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      .paging-info {
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      .paging-nav {
+        justify-content: space-between;
+
+        .paging-button-start {
+          display: flex;
+
+          .paging-prev {
+            border-right: 1px solid $gray-200;
+          }
+        }
+
+        .paging-button-end {
+          .paging-prev {
+            display: none;
+          }
+
+          .paging-next {
+            border-left: 1px solid $gray-200;
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      .paging-info {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      .paging-info {
+        display: flex;
+        justify-content: flex-start;
+
+        .paging-per-page {
+          border-right: 1px solid $gray-200;
+        }
+
+        .paging-records {
+          border-right: 1px solid $gray-200;
+        }
+      }
+
+      .paging-nav {
+        justify-content: flex-end;
+
+        .paging-button-start {
+          display: none;
+        }
+
+        .paging-page {
+          border-right: 1px solid $gray-200;
+        }
+
+        .paging-button-end {
+          .paging-prev {
+            display: block;
+            border-right: 1px solid $gray-200;
+          }
+        }
+      }
+    }
+  }
+}
