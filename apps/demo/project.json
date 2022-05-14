@@ -91,6 +91,10 @@
     },
     "serve": {
       "executor": "ngx-build-plus:dev-server",
+      "options": {
+        "browserTarget": "demo:build",
+        "proxyConfig": "apps/demo/proxy.config.json"
+      },
       "configurations": {
         "production": {
           "browserTarget": "demo:build:production"
@@ -102,10 +106,7 @@
           "browserTarget": "demo:build:localhost"
         }
       },
-      "defaultConfiguration": "development",
-      "options": {
-        "proxyConfig": "apps/demo/proxy.config.json"
-      }
+      "defaultConfiguration": "development"
     },
     "extract-i18n": {
       "executor": "ngx-build-plus:extract-i18n",

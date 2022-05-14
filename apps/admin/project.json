@@ -4,7 +4,7 @@
   "prefix": "nx-angular-bootstrap",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "ngx-build-plus:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/admin",
@@ -14,8 +14,12 @@
         "tsConfig": "apps/admin/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/admin/src/favicon.ico", "apps/admin/src/assets"],
-        "styles": ["apps/admin/src/styles.scss"],
-        "scripts": []
+        "styles": [
+          "libs/shared/bootstrap/green/green.scss",
+          "apps/admin/src/styles.scss"
+        ],
+        "scripts": [],
+        "allowedCommonJsDependencies": ["lodash"]
       },
       "configurations": {
         "production": {
@@ -39,6 +43,27 @@
           ],
           "outputHashing": "all"
         },
+        "localhost": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/demo/src/environments/environment.ts",
+              "with": "apps/demo/src/environments/environment.dev.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
         "development": {
           "buildOptimizer": false,
           "optimization": false,
@@ -51,19 +76,26 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "ngx-build-plus:dev-server",
+      "options": {
+        "browserTarget": "admin:build",
+        "proxyConfig": "apps/admin/proxy.config.json"
+      },
       "configurations": {
         "production": {
           "browserTarget": "admin:build:production"
         },
         "development": {
           "browserTarget": "admin:build:development"
+        },
+        "localhost": {
+          "browserTarget": "demo:build:localhost"
         }
       },
       "defaultConfiguration": "development"
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "ngx-build-plus:extract-i18n",
       "options": {
         "browserTarget": "admin:build"
       }
