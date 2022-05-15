@@ -1,13 +1,13 @@
 {
   "projectType": "library",
-  "sourceRoot": "libs/shared/templates/src",
+  "sourceRoot": "libs/shared/components/src",
   "prefix": "nx-angular-bootstrap",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/shared/templates"],
+      "outputs": ["coverage/libs/shared/components"],
       "options": {
-        "jestConfig": "libs/shared/templates/jest.config.ts",
+        "jestConfig": "libs/shared/components/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -15,8 +15,8 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/shared/templates/**/*.ts",
-          "libs/shared/templates/**/*.html"
+          "libs/shared/components/**/*.ts",
+          "libs/shared/components/**/*.html"
         ]
       }
     }

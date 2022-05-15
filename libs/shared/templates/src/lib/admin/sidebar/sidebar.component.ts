@@ -13,7 +13,7 @@ import { SidebarService } from './sidebar.service';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
-  selector: '[jds-shared-template-admin-sidebar]',
+  selector: '[jds-admin-sidebar]',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
   // eslint-disable-next-line @angular-eslint/no-host-metadata-property

@@ -1,0 +1,16 @@
+/* stylelint-disable selector-pseudo-element-no-unknown */
+:host {
+  display: inline-flex;
+  align-self: center;
+}
+
+:host ::ng-deep svg.icon {
+  height: 1em;
+  width: 1em;
+  fill: currentcolor;
+}
+
+:host ::ng-deep svg.icon.baseline {
+  top: 0.125em;
+  position: relative;
+}

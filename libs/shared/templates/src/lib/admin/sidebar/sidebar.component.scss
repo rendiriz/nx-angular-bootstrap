@@ -70,13 +70,13 @@
       &:not(.disabled):hover {
         border-radius: 8px;
         color: var(--bs-primary);
-        background-color: var(--bs-green-50);
+        background-color: var(--bs-primary-50);
       }
     }
 
     .nav-item > .nav-link.active {
       border-radius: 8px;
-      background-color: var(--bs-green-50);
+      background-color: var(--bs-primary-50);
       color: var(--bs-primary);
     }
   }

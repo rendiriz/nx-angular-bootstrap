@@ -8,6 +8,7 @@
     "demo": "apps/demo",
     "demo-e2e": "apps/demo-e2e",
     "shared-bootstrap": "libs/shared/bootstrap",
+    "shared-components": "libs/shared/components",
     "shared-templates": "libs/shared/templates"
   }
 }

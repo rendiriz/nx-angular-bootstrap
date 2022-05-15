@@ -21,6 +21,9 @@
       "@nx-angular-bootstrap/admin/services": [
         "libs/admin/services/src/index.ts"
       ],
+      "@nx-angular-bootstrap/shared/components": [
+        "libs/shared/components/src/index.ts"
+      ],
       "@nx-angular-bootstrap/shared/templates": [
         "libs/shared/templates/src/index.ts"
       ]

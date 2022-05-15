@@ -6,6 +6,7 @@
 
 // theme-color-variables
 $primary: $green-800;
+$primary-50: $green-50;
 $secondary: $gray-600;
 $success: $green;
 $info: $cyan;
@@ -20,6 +21,7 @@ $error: #dd5e5e;
 // theme-colors-map
 $theme-colors: (
   'primary': $primary,
+  'primary-50': $primary-50,
   'secondary': $secondary,
   'success': $success,
   'info': $info,

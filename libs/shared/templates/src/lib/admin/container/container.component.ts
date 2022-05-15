@@ -2,7 +2,7 @@ import { Component, Inject, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
-  selector: 'jds-shared-template-admin-container',
+  selector: 'jds-admin-container',
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.scss'],
 })
