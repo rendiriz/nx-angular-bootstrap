@@ -18,6 +18,7 @@ import localeId from '@angular/common/locales/id';
 
 // SERVICE
 import { SidebarService as SharedSidebarService } from '@nx-angular-bootstrap/shared/templates';
+import { NavbarService as SharedNavbarService } from '@nx-angular-bootstrap/shared/templates';
 import { SidebarService } from '@nx-angular-bootstrap/admin/services';
 
 // MODULE
@@ -46,6 +47,7 @@ registerLocaleData(localeId);
     },
     Title,
     SharedSidebarService,
+    SharedNavbarService,
     SidebarService,
   ],
   bootstrap: [AppComponent],

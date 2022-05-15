@@ -1,0 +1,25 @@
+.avatar-item {
+  display: flex;
+
+  .avatar-item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 8px;
+    margin-right: 8px;
+
+    .avatar-item-primary,
+    .avatar-item-secondary {
+      &.avatar-item-truncation {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+    }
+
+    .avatar-item-secondary {
+      font-size: 12px;
+    }
+  }
+}

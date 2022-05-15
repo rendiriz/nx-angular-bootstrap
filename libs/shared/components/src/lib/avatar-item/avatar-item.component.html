@@ -1,0 +1,13 @@
+<div class="avatar-item">
+  <ng-template #avatar></ng-template>
+  <div class="avatar-item-content">
+    <div *ngIf="primaryText"
+         [ngClass]="['avatar-item-primary', getIsTruncation()]">
+      {{ primaryText }}
+    </div>
+    <div *ngIf="secondaryText"
+         [ngClass]="['avatar-item-secondary', getIsTruncation()]">
+      {{ secondaryText }}
+    </div>
+  </div>
+</div>
