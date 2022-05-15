@@ -14,7 +14,17 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-angular-bootstrap/admin/resolvers": [
+        "libs/admin/resolvers/src/index.ts"
+      ],
+      "@nx-angular-bootstrap/admin/services": [
+        "libs/admin/services/src/index.ts"
+      ],
+      "@nx-angular-bootstrap/shared/templates": [
+        "libs/shared/templates/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

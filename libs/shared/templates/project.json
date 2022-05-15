@@ -1,0 +1,41 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/shared/templates/src",
+  "prefix": "nx-angular-bootstrap",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/shared/templates"],
+      "options": {
+        "project": "libs/shared/templates/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/shared/templates/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/shared/templates/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/templates"],
+      "options": {
+        "jestConfig": "libs/shared/templates/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/templates/**/*.ts",
+          "libs/shared/templates/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

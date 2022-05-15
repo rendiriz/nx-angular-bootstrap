@@ -3,8 +3,11 @@
   "projects": {
     "admin": "apps/admin",
     "admin-e2e": "apps/admin-e2e",
+    "admin-resolvers": "libs/admin/resolvers",
+    "admin-services": "libs/admin/services",
     "demo": "apps/demo",
     "demo-e2e": "apps/demo-e2e",
-    "shared-bootstrap": "libs/shared/bootstrap"
+    "shared-bootstrap": "libs/shared/bootstrap",
+    "shared-templates": "libs/shared/templates"
   }
 }

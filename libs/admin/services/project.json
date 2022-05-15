@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/admin/services/src",
+  "prefix": "nx-angular-bootstrap",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/admin/services"],
+      "options": {
+        "jestConfig": "libs/admin/services/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/admin/services/**/*.ts",
+          "libs/admin/services/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

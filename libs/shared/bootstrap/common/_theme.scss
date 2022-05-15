@@ -29,6 +29,35 @@ $utilities-bg: map-merge(
 );
 $utilities-bg-colors: map-loop($utilities-bg, rgba-css-var, '$key', 'bg');
 
+// utilities
+$utilities: map-merge(
+  $utilities,
+  (
+    'color':
+      map-merge(
+        map-get($utilities, 'color'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'color'), 'values'),
+              ($utilities-text-colors)
+            ),
+        )
+      ),
+    'background-color':
+      map-merge(
+        map-get($utilities, 'background-color'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'background-color'), 'values'),
+              ($utilities-bg-colors)
+            ),
+        )
+      ),
+  )
+);
+
 // Links
 // -----------------------------------------------------------------------------
 $link-color: $primary;
