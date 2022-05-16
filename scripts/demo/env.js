@@ -6,8 +6,8 @@ const environment = process.env.ENVIRONMENT;
 const isProduction = environment === 'production';
 
 let targetPath = './apps/demo/src/environments/';
-if (environment === 'development') {
-  targetPath += `environment.dev.ts`;
+if (environment === 'staging') {
+  targetPath += `environment.stag.ts`;
 } else if (environment === 'production') {
   targetPath += `environment.prod.ts`;
 } else {
