@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { AvatarModule } from '@nx-angular-bootstrap/shared/components';
 
 registerLocaleData(localeId);
 
@@ -27,6 +28,7 @@ registerLocaleData(localeId);
     NgSelectModule,
     NgxDaterangepickerMd.forRoot(),
     NgxSpinnerModule,
+    AvatarModule,
   ],
   providers: [
     {

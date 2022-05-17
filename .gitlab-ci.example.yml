@@ -1,0 +1,57 @@
+image: node:16-alpine
+
+stages:
+  - setup
+  - test
+  - trigger
+
+# Setup ========================================================================
+install:
+  stage: setup
+  only:
+    - 'staging'
+    - 'main'
+  script:
+    - apk add --update bash
+    - apk add --update git && rm -rf /tmp/* /var/cache/apk/*
+
+# Test =========================================================================
+lint:
+  stage: test
+  only:
+    - 'staging'
+    - 'main'
+  script:
+    - npx nx affected:lint --base=${CI_COMMIT_REF_NAME} --parallel
+  allow_failure: false
+
+# Trigger ======================================================================
+affected:
+  stage: trigger
+  only:
+    - 'staging'
+    - 'main'
+  variables:
+    AFFECTED_ADMIN: 'node scripts/affected.js build admin ${CI_COMMIT_REF_NAME}'
+    AFFECTED_SATUDATA: 'node scripts/affected.js build satudata ${CI_COMMIT_REF_NAME}'
+  before_script:
+    - CHECK_ADMIN=$(eval "$AFFECTED_ADMIN")
+    - CHECK_SATUDATA=$(eval "$AFFECTED_SATUDATA")
+  script:
+    - echo "CHECK_ADMIN=${CHECK_ADMIN}" >> affected.env
+    - echo "CHECK_SATUDATA=${CHECK_SATUDATA}" >> affected.env
+  artifacts:
+    reports:
+      dotenv: affected.env
+
+trigger:
+  stage: trigger
+  variables:
+    CHECK_ADMIN: $CHECK_ADMIN
+    CHECK_SATUDATA: $CHECK_SATUDATA
+  trigger:
+    include:
+      - '/apps/admin/.gitlab-ci.yml'
+      - '/apps/satudata/.gitlab-ci.yml'
+  needs:
+    - affected

@@ -1,0 +1,58 @@
+stages:
+  - build
+  - deploy
+
+# Build ========================================================================
+build-admin-staging:
+  rules:
+    - if: ($CI_COMMIT_BRANCH == "staging" && $CI_COMMIT_REF_NAME == "staging") && $CHECK_ADMIN != "break"
+  stage: build
+  extends: .build-admin
+  environment: 'development'
+
+build-admin-production:
+  rules:
+    - if: ($CI_COMMIT_BRANCH == "main" && $CI_COMMIT_REF_NAME == "main") && $CHECK_ADMIN != "break"
+  stage: build
+  extends: .build-admin
+  environment: 'production'
+
+.build-admin:
+  image: docker:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_DRIVER: 'overlay'
+  before_script:
+    - docker version
+  script:
+    - TAG_ADMIN="${CHECK_ADMIN}-${CI_COMMIT_REF_NAME}"
+    - DOCKERFILE_ADMIN=".docker/${CHECK_ADMIN}/${CI_COMMIT_REF_NAME}.dockerfile"
+    - REGISTRY_ADMIN="${CI_REGISTRY}/${CI_PROJECT_PATH}:${TAG_ADMIN}"
+    - echo "$CHECK_ADMIN"
+    - echo "print env"
+    - echo "docker build -f ${DOCKERFILE_ADMIN} -t ${REGISTRY_ADMIN} --pull ."
+    - echo "docker push ${REGISTRY_ADMIN}"
+  after_script:
+    - echo "docker logout ${CI_REGISTRY}"
+
+# Deploy =======================================================================
+deploy-admin-staging:
+  rules:
+    - if: ($CI_COMMIT_BRANCH == "staging" && $CI_COMMIT_REF_NAME == "staging") && $CHECK_ADMIN != "break"
+  stage: deploy
+  extends: .deploy-admin
+  environment: 'development'
+
+deploy-admin-production:
+  rules:
+    - if: ($CI_COMMIT_BRANCH == "main" && $CI_COMMIT_REF_NAME == "main") && $CHECK_ADMIN != "break"
+  stage: deploy
+  extends: .deploy-admin
+  environment: 'production'
+
+.deploy-admin:
+  before_script:
+    - echo "add ssh"
+  script:
+    - echo "deployment"
